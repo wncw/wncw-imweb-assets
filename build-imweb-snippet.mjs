@@ -132,10 +132,12 @@ const imwebGuardCss = `
   min-width: 0;
   margin: 0;
   isolation: isolate;
-  direction: ltr;
+  direction: ltr !important;
   font-style: normal;
-  text-align: left;
-  unicode-bidi: isolate;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+  float: none !important;
+  clear: none !important;
 }
 
 #wncw-imweb-page,
@@ -153,12 +155,46 @@ const imwebGuardCss = `
 #wncw-imweb-page article,
 #wncw-imweb-page div {
   min-width: 0;
+  float: none !important;
+  clear: none !important;
 }
 
 #wncw-imweb-page img {
   max-width: 100%;
   border: 0;
   vertical-align: middle;
+}
+
+#wncw-imweb-page .container,
+#wncw-imweb-page .site-header,
+#wncw-imweb-page .section-heading,
+#wncw-imweb-page .section-intro,
+#wncw-imweb-page .problem-copy,
+#wncw-imweb-page .hero-grid,
+#wncw-imweb-page .product-grid,
+#wncw-imweb-page .split-section,
+#wncw-imweb-page .issue-grid,
+#wncw-imweb-page .scope-grid,
+#wncw-imweb-page .pilot-layout,
+#wncw-imweb-page .pilot-board,
+#wncw-imweb-page .process-layout,
+#wncw-imweb-page .process-list,
+#wncw-imweb-page .usecase-layout,
+#wncw-imweb-page .usecase-panel,
+#wncw-imweb-page .contact-box,
+#wncw-imweb-page .contact-actions,
+#wncw-imweb-page .footer-layout,
+#wncw-imweb-page .hero-copy,
+#wncw-imweb-page .hero-visual,
+#wncw-imweb-page .product-card,
+#wncw-imweb-page .issue-card,
+#wncw-imweb-page .scope-grid article,
+#wncw-imweb-page .pilot-board article,
+#wncw-imweb-page .process-item,
+#wncw-imweb-page .usecase-panel article {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
 }
 
 #wncw-imweb-page .site-header,
@@ -175,19 +211,20 @@ const imwebGuardCss = `
 #wncw-imweb-page .usecase-panel,
 #wncw-imweb-page .contact-box,
 #wncw-imweb-page .footer-layout {
-  display: grid;
+  display: grid !important;
 }
 
 #wncw-imweb-page .hero-actions,
 #wncw-imweb-page .brand,
 #wncw-imweb-page .button,
 #wncw-imweb-page .footer-links {
-  display: flex;
+  display: flex !important;
 }
 
 #wncw-imweb-page .browser-shot img {
-  display: block;
-  width: 100%;
+  display: block !important;
+  width: 100% !important;
+  height: auto;
 }
 `;
 
@@ -241,6 +278,6 @@ await writeFile(
 
 await writeFile(
   join(here, "preview-imweb-simulated.html"),
-  `<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>WNCW Imweb Simulation</title>\n<style>\nbody { margin: 0; direction: rtl; background: #f8f7f2; }\n.imweb-section { max-width: 1180px; margin: 0 auto; padding: 0 20px; direction: rtl; }\n</style>\n</head>\n<body>\n<div class="imweb-section">\n${renderSnippet(false)}\n</div>\n</body>\n</html>\n`,
+  `<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>WNCW Imweb Simulation</title>\n<style>\nbody { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }\n.imweb-section { max-width: 1180px; margin: 0 auto; padding: 0 20px; direction: rtl !important; text-align: right !important; }\n.imweb-section [class] { direction: rtl !important; text-align: right; }\n.imweb-section section,\n.imweb-section article,\n.imweb-section div { float: right; }\n</style>\n</head>\n<body>\n<div class="imweb-section">\n${renderSnippet(false)}\n</div>\n</body>\n</html>\n`,
   "utf8",
 );
