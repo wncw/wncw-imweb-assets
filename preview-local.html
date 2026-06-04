@@ -1,0 +1,1115 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WNCW Imweb Preview</title></head><body><style>
+#wncw-imweb-page {
+  --ink: #20201e;
+  --ink-soft: #5f625d;
+  --muted: #8c918a;
+  --line: #d9ddd5;
+  --line-strong: #c7cdc3;
+  --paper: #f8f7f2;
+  --paper-warm: #efeee7;
+  --white: #ffffff;
+  --teal: #2f756b;
+  --teal-dark: #1d554e;
+  --blue: #2f5fbe;
+  --clay: #a96b50;
+  --shadow: 0 24px 70px rgba(34, 38, 32, 0.12);
+  --radius: 8px;
+  --container: 1160px;
+}
+#wncw-imweb-page * {
+  box-sizing: border-box;
+}
+#wncw-imweb-page {
+  scroll-behavior: smooth;
+}
+#wncw-imweb-page {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.55;
+  line-break: strict;
+  text-rendering: geometricPrecision;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+#wncw-imweb-page.wncw-nav-open {
+  overflow: hidden;
+}
+#wncw-imweb-page a {
+  color: inherit;
+  text-decoration: none;
+}
+#wncw-imweb-page button,
+#wncw-imweb-page input,
+#wncw-imweb-page textarea {
+  font: inherit;
+}
+#wncw-imweb-page h1,
+#wncw-imweb-page h2,
+#wncw-imweb-page h3,
+#wncw-imweb-page p,
+#wncw-imweb-page dl,
+#wncw-imweb-page dd,
+#wncw-imweb-page ol {
+  margin: 0;
+}
+#wncw-imweb-page .text-nowrap {
+  white-space: nowrap;
+}
+#wncw-imweb-page .container {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+}
+#wncw-imweb-page .section-pad {
+  padding: 96px 0;
+}
+#wncw-imweb-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+  width: min(1240px, calc(100% - 32px));
+  min-height: 72px;
+  margin: 14px auto 0;
+  padding: 0 18px;
+  border: 1px solid rgba(217, 221, 213, 0.86);
+  border-radius: var(--radius);
+  background: rgba(248, 247, 242, 0.9);
+  backdrop-filter: blur(18px);
+}
+#wncw-imweb-page .site-header.is-scrolled {
+  box-shadow: 0 14px 36px rgba(34, 38, 32, 0.08);
+}
+#wncw-imweb-page .brand {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 10px;
+  font-weight: 760;
+}
+#wncw-imweb-page .brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+#wncw-imweb-page .brand-text {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+#wncw-imweb-page .site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 650;
+}
+#wncw-imweb-page .site-nav a {
+  transition: color 160ms ease;
+  white-space: nowrap;
+}
+#wncw-imweb-page .site-nav a:hover {
+  color: var(--ink);
+}
+#wncw-imweb-page .header-cta {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 740;
+  white-space: nowrap;
+}
+#wncw-imweb-page .nav-toggle {
+  display: none;
+}
+#wncw-imweb-page .hero {
+  position: relative;
+  padding-top: 94px;
+  overflow: hidden;
+}
+#wncw-imweb-page .hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(32, 32, 30, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(32, 32, 30, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}
+#wncw-imweb-page .hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 42%;
+  height: 58%;
+  content: "";
+  background: linear-gradient(135deg, transparent 0%, rgba(223, 232, 235, 0.52) 100%);
+  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+}
+#wncw-imweb-page .hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 56px;
+}
+#wncw-imweb-page .eyebrow {
+  margin: 0 0 18px;
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+#wncw-imweb-page h1,
+#wncw-imweb-page h2,
+#wncw-imweb-page h3,
+#wncw-imweb-page p,
+#wncw-imweb-page li,
+#wncw-imweb-page dt,
+#wncw-imweb-page dd,
+#wncw-imweb-page a,
+#wncw-imweb-page b,
+#wncw-imweb-page strong,
+#wncw-imweb-page span {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+#wncw-imweb-page h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(46px, 5.6vw, 78px);
+  font-weight: 780;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+#wncw-imweb-page h2 {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 760;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+#wncw-imweb-page h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 740;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+#wncw-imweb-page .hero-lead {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: var(--ink-soft);
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.72;
+}
+#wncw-imweb-page .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+#wncw-imweb-page .button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 760;
+  white-space: nowrap;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+#wncw-imweb-page .button:hover {
+  transform: translateY(-1px);
+}
+#wncw-imweb-page .button.primary {
+  border: 1px solid var(--teal-dark);
+  background: var(--teal-dark);
+  color: var(--white);
+}
+#wncw-imweb-page .button.secondary {
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink);
+}
+#wncw-imweb-page .hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 650px;
+  margin: 42px 0 0;
+  padding: 0;
+}
+#wncw-imweb-page .hero-meta div {
+  min-width: 0;
+  padding-top: 15px;
+  border-top: 1px solid var(--line-strong);
+}
+#wncw-imweb-page .hero-meta dt {
+  margin: 0 0 4px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 720;
+  text-transform: uppercase;
+}
+#wncw-imweb-page .hero-meta dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 760;
+}
+#wncw-imweb-page .hero-visual {
+  min-width: 0;
+}
+#wncw-imweb-page .browser-shot {
+  min-width: 0;
+  border: 1px solid rgba(32, 32, 30, 0.12);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+#wncw-imweb-page .browser-bar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  height: 42px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  background: #f3f2ed;
+}
+#wncw-imweb-page .browser-bar span {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #c9c7bd;
+}
+#wncw-imweb-page .browser-bar span:nth-child(2) {
+  background: #d8c3a3;
+}
+#wncw-imweb-page .browser-bar span:nth-child(3) {
+  background: #9db9b3;
+}
+#wncw-imweb-page .browser-bar strong {
+  min-width: 0;
+  margin-left: 8px;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#wncw-imweb-page .browser-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f5f7fb;
+}
+#wncw-imweb-page .hero-shot img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top left;
+}
+#wncw-imweb-page .product-section {
+  background: var(--paper);
+}
+#wncw-imweb-page .section-heading {
+  display: grid;
+  max-width: 820px;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+#wncw-imweb-page .section-heading p:not(.eyebrow),
+#wncw-imweb-page .problem-copy p,
+#wncw-imweb-page .section-intro p:not(.eyebrow),
+#wncw-imweb-page .contact-box p {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.75;
+}
+#wncw-imweb-page .section-heading.narrow {
+  max-width: 760px;
+}
+#wncw-imweb-page .product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+#wncw-imweb-page .product-card {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.64);
+  padding: 18px;
+}
+#wncw-imweb-page .product-card.large {
+  grid-column: span 2;
+}
+#wncw-imweb-page .product-media {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #f5f7fb;
+  overflow: hidden;
+}
+#wncw-imweb-page .product-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+#wncw-imweb-page .product-card span,
+#wncw-imweb-page .scope-grid span,
+#wncw-imweb-page .pilot-board span,
+#wncw-imweb-page .usecase-panel span,
+#wncw-imweb-page .issue-card span {
+  display: block;
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+#wncw-imweb-page .product-card h3,
+#wncw-imweb-page .scope-grid h3,
+#wncw-imweb-page .pilot-board h3,
+#wncw-imweb-page .usecase-panel h3,
+#wncw-imweb-page .issue-card h3 {
+  margin-top: 10px;
+}
+#wncw-imweb-page .product-card p,
+#wncw-imweb-page .scope-grid p,
+#wncw-imweb-page .pilot-board p,
+#wncw-imweb-page .usecase-panel p,
+#wncw-imweb-page .issue-card p,
+#wncw-imweb-page .process-item p {
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.68;
+}
+#wncw-imweb-page .muted {
+  background: var(--paper-warm);
+}
+#wncw-imweb-page .split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 0.72fr);
+  gap: 62px;
+  align-items: start;
+}
+#wncw-imweb-page .problem-copy p + p {
+  margin-top: 18px;
+}
+#wncw-imweb-page .issue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 42px;
+}
+#wncw-imweb-page .issue-card,
+#wncw-imweb-page .scope-grid article,
+#wncw-imweb-page .pilot-board article,
+#wncw-imweb-page .usecase-panel article {
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.56);
+  padding: 26px;
+}
+#wncw-imweb-page .scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+#wncw-imweb-page .pilot-section {
+  background: #f4f5f0;
+}
+#wncw-imweb-page .pilot-layout,
+#wncw-imweb-page .usecase-layout,
+#wncw-imweb-page .process-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.05fr);
+  gap: 62px;
+  align-items: start;
+}
+#wncw-imweb-page .pilot-board,
+#wncw-imweb-page .usecase-panel,
+#wncw-imweb-page .process-list {
+  display: grid;
+  gap: 14px;
+}
+#wncw-imweb-page .pilot-board {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#wncw-imweb-page .process-section {
+  background: var(--paper);
+}
+#wncw-imweb-page .sticky-intro {
+  position: sticky;
+  top: 112px;
+}
+#wncw-imweb-page .process-item {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 20px;
+  min-width: 0;
+  padding: 26px 0;
+  border-top: 1px solid var(--line-strong);
+}
+#wncw-imweb-page .process-item:last-child {
+  border-bottom: 1px solid var(--line-strong);
+}
+#wncw-imweb-page .process-item > span {
+  color: var(--clay);
+  font-size: 14px;
+  font-weight: 850;
+}
+#wncw-imweb-page .usecase-section {
+  background: var(--paper-warm);
+}
+#wncw-imweb-page .usecase-panel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#wncw-imweb-page .contact-section {
+  padding-top: 80px;
+}
+#wncw-imweb-page .contact-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  gap: 48px;
+  align-items: center;
+  padding: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+}
+#wncw-imweb-page .contact-box .eyebrow,
+#wncw-imweb-page .contact-box p {
+  color: rgba(248, 247, 242, 0.72);
+}
+#wncw-imweb-page .contact-box h2 {
+  color: var(--paper);
+}
+#wncw-imweb-page .contact-actions {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+#wncw-imweb-page .contact-actions .button.primary {
+  border-color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
+}
+#wncw-imweb-page .site-footer {
+  padding: 32px 0 44px;
+}
+#wncw-imweb-page .footer-layout {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 28px;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+#wncw-imweb-page .footer-brand {
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+#wncw-imweb-page .footer-links {
+  display: flex;
+  gap: 18px;
+  white-space: nowrap;
+}
+#wncw-imweb-page .copyright {
+  white-space: nowrap;
+}
+@media (max-width: 1120px) {
+#wncw-imweb-page .hero-grid,
+#wncw-imweb-page .split-section,
+#wncw-imweb-page .pilot-layout,
+#wncw-imweb-page .usecase-layout,
+#wncw-imweb-page .process-layout,
+#wncw-imweb-page .contact-box {
+    grid-template-columns: 1fr;
+  }
+#wncw-imweb-page .sticky-intro {
+    position: static;
+  }
+#wncw-imweb-page .scope-grid,
+#wncw-imweb-page .issue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 880px) {
+#wncw-imweb-page .site-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+#wncw-imweb-page .nav-toggle {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--ink);
+  }
+#wncw-imweb-page .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+  }
+#wncw-imweb-page .site-nav,
+#wncw-imweb-page .header-cta {
+    display: none;
+  }
+#wncw-imweb-page.wncw-nav-open .site-nav,
+#wncw-imweb-page.wncw-nav-open .header-cta {
+    display: flex;
+  }
+#wncw-imweb-page.wncw-nav-open .site-header {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    padding: 18px;
+  }
+#wncw-imweb-page.wncw-nav-open .site-nav {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding-top: 8px;
+  }
+#wncw-imweb-page.wncw-nav-open .site-nav a {
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+  }
+#wncw-imweb-page.wncw-nav-open .header-cta {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 8px;
+  }
+#wncw-imweb-page .section-pad {
+    padding: 76px 0;
+  }
+#wncw-imweb-page .product-grid,
+#wncw-imweb-page .product-card.large,
+#wncw-imweb-page .pilot-board,
+#wncw-imweb-page .usecase-panel,
+#wncw-imweb-page .scope-grid,
+#wncw-imweb-page .issue-grid {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+#wncw-imweb-page .footer-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+@media (max-width: 560px) {
+#wncw-imweb-page .container {
+    width: min(100% - 28px, var(--container));
+  }
+#wncw-imweb-page .site-header {
+    width: min(100% - 20px, 1240px);
+    min-height: 64px;
+    margin-top: 10px;
+  }
+#wncw-imweb-page .hero {
+    padding-top: 72px;
+  }
+#wncw-imweb-page h1 {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+#wncw-imweb-page h2 {
+    font-size: 29px;
+  }
+#wncw-imweb-page .hero-lead,
+#wncw-imweb-page .section-heading p:not(.eyebrow),
+#wncw-imweb-page .problem-copy p,
+#wncw-imweb-page .section-intro p:not(.eyebrow),
+#wncw-imweb-page .contact-box p {
+    font-size: 16px;
+  }
+#wncw-imweb-page .hero-meta {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+#wncw-imweb-page .button,
+#wncw-imweb-page .hero-actions a {
+    width: 100%;
+  }
+#wncw-imweb-page .product-card,
+#wncw-imweb-page .issue-card,
+#wncw-imweb-page .scope-grid article,
+#wncw-imweb-page .pilot-board article,
+#wncw-imweb-page .usecase-panel article,
+#wncw-imweb-page .contact-box {
+    padding: 20px;
+  }
+#wncw-imweb-page .process-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+#wncw-imweb-page .footer-links {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}
+
+
+</style>
+
+<div id="wncw-imweb-page" class="wncw-imweb-page">
+<header class="site-header" data-header>
+      <a class="brand" href="#wncw-top" aria-label="WNCW 홈">
+        <span class="brand-mark">W</span>
+        <span class="brand-text">WNCW</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="주요 메뉴" data-nav>
+        <a href="#wncw-product">제품</a>
+        <a href="#wncw-scope">개발범위</a>
+        <a href="#wncw-pilot">실증</a>
+        <a href="#wncw-process">진행방식</a>
+        <a href="#wncw-contact">문의</a>
+      </nav>
+
+      <a class="header-cta" href="#wncw-contact">MVP 구축 문의</a>
+    </header>
+
+    <main id="wncw-top">
+      <section class="hero section-pad">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">WNCW AI DataOps MVP Studio</p>
+            <h1>운영 데이터를<br />AI 업무 콘솔로.</h1>
+            <p class="hero-lead">
+              문서, Excel, 업무 기록, <span class="text-nowrap">시스템 데이터</span>를 연결해
+              AI 검색·요약·검증이 가능한 <span class="text-nowrap">실증용 MVP</span>를 개발합니다.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#wncw-contact">MVP 구축 문의</a>
+              <a class="button secondary" href="#wncw-product">제품 화면 보기</a>
+            </div>
+            <dl class="hero-meta" aria-label="WNCW 개발 범위 요약">
+              <div>
+                <dt>Build</dt>
+                <dd>AI 업무 콘솔</dd>
+              </div>
+              <div>
+                <dt>Core</dt>
+                <dd>RAG·데이터 통합</dd>
+              </div>
+              <div>
+                <dt>Output</dt>
+                <dd>MVP 실증 리포트</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-visual" aria-label="WNCW AI DataOps Console 서비스 화면">
+            <div class="browser-shot hero-shot">
+              <div class="browser-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>wncw.co.kr/app</strong>
+              </div>
+              <img
+                src="./assets/wncw-console-overview.png"
+                alt="WNCW AI DataOps Console 데이터 자산 통합관리 화면"
+                width="1425"
+                height="960"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad product-section" id="wncw-product">
+        <div class="container section-heading">
+          <p class="eyebrow">Product Direction</p>
+          <h2>기획 문구보다,<br />실제 MVP 화면을 기준으로 설계합니다.</h2>
+          <p>
+            지원사업 실증에서는 데이터 자산 관리, AI 검색, 파이프라인, 리포트 화면을 우선 개발 범위로 둡니다.
+          </p>
+        </div>
+
+        <div class="container product-grid">
+          <article class="product-card large">
+            <div class="product-media">
+              <img
+                src="./assets/wncw-console-overview.png"
+                alt="데이터 자산 통합관리 화면"
+                width="1425"
+                height="960"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span>01 · Data Catalog</span>
+              <h3>데이터 자산 통합관리</h3>
+              <p>문서, Excel, CSV, DB 소스를 업무 기준으로 분류하고 AI 연결 상태를 관리합니다.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="./assets/wncw-console-search.png"
+                alt="출처 기반 AI 검색 화면"
+                width="1440"
+                height="960"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span>02 · AI Search</span>
+              <h3>출처 기반 AI 검색</h3>
+              <p>자연어 질문에 답변 초안과 근거 문서를 함께 제공합니다.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="./assets/wncw-console-pipeline.png"
+                alt="AI 학습환경 구축 파이프라인 화면"
+                width="1440"
+                height="960"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span>03 · Pipeline</span>
+              <h3>AI 학습환경 구축 흐름</h3>
+              <p>수집, 구조화, 검증, 질문셋 생성을 하나의 작업 흐름으로 관리합니다.</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img
+                src="./assets/wncw-console-insights.png"
+                alt="MVP 실증 리포트 화면"
+                width="1440"
+                height="960"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <span>04 · Insights</span>
+              <h3>MVP 실증 리포트</h3>
+              <p>질문 검증, 출처 누락, 다음 개발 항목을 리포트로 정리합니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad muted" id="wncw-problem">
+        <div class="container split-section">
+          <div class="section-intro">
+            <p class="eyebrow">Problem</p>
+            <h2>스마트공장을 도입해도,<br />AI가 바로 쓸 데이터는 따로 정리해야 합니다.</h2>
+          </div>
+          <div class="problem-copy">
+            <p>
+              현장 문서, 업무 기록, 시스템 데이터는 이미 존재하지만 저장 위치와 기준이 달라 검색, 요약, 검증에 바로 쓰기 어렵습니다.
+            </p>
+            <p>
+              WNCW는 이 자료를 AI 서비스가 사용할 수 있는 구조로 연결하고, 작은 업무 범위부터 MVP로 검증합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="container issue-grid">
+          <article class="issue-card">
+            <span>01</span>
+            <h3>흩어진 자료</h3>
+            <p>PDF, Excel, CSV, DB, 개인 PC 자료가 분리되어 같은 정보를 여러 번 찾고 확인합니다.</p>
+          </article>
+          <article class="issue-card">
+            <span>02</span>
+            <h3>불명확한 출처</h3>
+            <p>AI 답변을 만들 수 있어도 근거 문서, 담당 기준, 최신 여부를 함께 검증하기 어렵습니다.</p>
+          </article>
+          <article class="issue-card">
+            <span>03</span>
+            <h3>실증 없는 도입</h3>
+            <p>실제 데이터로 만든 MVP가 없으면 지원사업 이후 운영 가능성을 판단하기 어렵습니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad scope-section" id="wncw-scope">
+        <div class="container section-heading narrow">
+          <p class="eyebrow">Development Scope</p>
+          <h2>초기 스타트업이지만,<br />구축 범위는 명확해야 합니다.</h2>
+          <p>
+            과도한 플랫폼을 한 번에 약속하지 않고, 실증에 필요한 기능을 좁혀 실제 화면과 데이터 흐름으로 구현합니다.
+          </p>
+        </div>
+
+        <div class="container scope-grid">
+          <article>
+            <span>Data Ingestion</span>
+            <h3>자료 수집·연결</h3>
+            <p>문서, Excel, CSV, DB 데이터를 하나의 작업 공간으로 연결합니다.</p>
+          </article>
+          <article>
+            <span>Parsing</span>
+            <h3>문서·표 구조화</h3>
+            <p>업무 단위로 문서 내용을 나누고 표 데이터 필드를 정리합니다.</p>
+          </article>
+          <article>
+            <span>RAG Search</span>
+            <h3>출처 기반 AI 검색</h3>
+            <p>답변 초안과 근거 문서를 함께 보여주는 검색 흐름을 만듭니다.</p>
+          </article>
+          <article>
+            <span>Evaluation</span>
+            <h3>질문셋·검증 로그</h3>
+            <p>실증 질문, 답변 결과, 담당자 검토 이력을 관리합니다.</p>
+          </article>
+          <article>
+            <span>Admin Console</span>
+            <h3>운영 콘솔</h3>
+            <p>권한, 담당, 상태, 연결 업무를 관리하는 관리자 화면을 구성합니다.</p>
+          </article>
+          <article>
+            <span>Pilot Report</span>
+            <h3>실증 리포트</h3>
+            <p>완료 항목, 보완 데이터, 다음 개발 범위를 정리합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad pilot-section" id="wncw-pilot">
+        <div class="container pilot-layout">
+          <div class="section-intro">
+            <p class="eyebrow">Pilot Scope</p>
+            <h2>지원사업에서는<br />작은 제품 범위를 끝까지 검증합니다.</h2>
+            <p>
+              포항 기반 제조 AX 실증을 염두에 두고, 실제 수요기업 데이터로 작동하는 MVP를 우선 목표로 둡니다.
+            </p>
+          </div>
+
+          <div class="pilot-board">
+            <article>
+              <span>Step 01</span>
+              <h3>업무 범위 확정</h3>
+              <p>수요기업의 반복 질문, 문서, 시스템 데이터 중 실증 가능한 범위를 정합니다.</p>
+            </article>
+            <article>
+              <span>Step 02</span>
+              <h3>데이터 연결</h3>
+              <p>자료 위치, 담당 기준, 최신성, 권한을 확인하고 AI 검색용 구조로 정리합니다.</p>
+            </article>
+            <article>
+              <span>Step 03</span>
+              <h3>MVP 개발</h3>
+              <p>데이터 자산 관리, RAG 검색, 검증 로그, 리포트 화면을 구현합니다.</p>
+            </article>
+            <article>
+              <span>Step 04</span>
+              <h3>현장 검증</h3>
+              <p>질문셋과 담당자 검토를 통해 실제 업무 적용 가능성을 확인합니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad process-section" id="wncw-process">
+        <div class="container process-layout">
+          <div class="section-intro sticky-intro">
+            <p class="eyebrow">How We Work</p>
+            <h2>컨설팅 보고서가 아니라,<br />운영 가능한 화면을 남깁니다.</h2>
+            <p>
+              진단, 설계, 개발, 검증을 한 흐름으로 묶어 지원사업 이후에도 이어갈 수 있는 제품 기반을 만듭니다.
+            </p>
+          </div>
+
+          <div class="process-list">
+            <article class="process-item">
+              <span>01</span>
+              <div>
+                <h3>진단</h3>
+                <p>자료 위치, 반복 질문, 의사결정 흐름, 시스템 연결 가능성을 확인합니다.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <span>02</span>
+              <div>
+                <h3>설계</h3>
+                <p>데이터 구조, 화면 흐름, 권한 기준, 실증 질문셋을 작업 단위로 정리합니다.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <span>03</span>
+              <div>
+                <h3>개발</h3>
+                <p>핵심 업무 하나를 선택해 AI 검색, 출처 확인, 검증 화면으로 구현합니다.</p>
+              </div>
+            </article>
+            <article class="process-item">
+              <span>04</span>
+              <div>
+                <h3>검증</h3>
+                <p>질문 결과, 누락 데이터, 담당자 피드백을 리포트로 정리합니다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad usecase-section">
+        <div class="container usecase-layout">
+          <div class="section-intro">
+            <p class="eyebrow">Use Cases</p>
+            <h2>분야를 좁히지 않고,<br />운영 데이터 문제에서 시작합니다.</h2>
+          </div>
+
+          <div class="usecase-panel">
+            <article>
+              <span>Manufacturing</span>
+              <h3>제조 운영 데이터</h3>
+              <p>현장 기록, 설비 이력, 품질 문서를 업무 기준으로 연결합니다.</p>
+            </article>
+            <article>
+              <span>Knowledge Search</span>
+              <h3>내부 문서 검색</h3>
+              <p>매뉴얼, 규정, 회의록에서 필요한 내용을 근거와 함께 찾습니다.</p>
+            </article>
+            <article>
+              <span>Reporting</span>
+              <h3>보고 업무 지원</h3>
+              <p>반복 보고와 요약 자료를 일정한 검증 기준으로 정리합니다.</p>
+            </article>
+            <article>
+              <span>Onboarding</span>
+              <h3>교육·온보딩 자료화</h3>
+              <p>신규 구성원이 업무 맥락과 판단 기준을 빠르게 확인하게 만듭니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad contact-section" id="wncw-contact">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>AI 실증 범위부터<br />함께 정의하겠습니다.</h2>
+            <p>
+              현재 자료 구조와 반복 업무를 기준으로 MVP 개발 범위와 우선순위를 정리합니다.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <!-- TODO: 실제 WNCW 문의 이메일로 교체하세요. -->
+            <a class="button primary" href="mailto:contact@wncw.co.kr?subject=WNCW%20MVP%20구축%20문의">문의 메일 보내기</a>
+            <p>상담 후 데이터 범위, 개발 기능, 실증 질문셋을 간단한 진단 메모로 정리합니다.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <div>
+          <a class="brand footer-brand" href="#wncw-top" aria-label="WNCW 홈">
+            <span class="brand-mark">W</span>
+            <span class="brand-text">WNCW</span>
+          </a>
+          <p>AI DataOps MVP Studio</p>
+        </div>
+        <div class="footer-links">
+          <a href="#wncw-product">제품</a>
+          <a href="#wncw-scope">개발범위</a>
+          <a href="#wncw-pilot">실증</a>
+          <a href="#wncw-contact">문의</a>
+        </div>
+        <p class="copyright">© 2026 WNCW. All rights reserved.</p>
+      </div>
+    </footer>
+</div>
+
+<script>
+(() => {
+  const root = document.getElementById('wncw-imweb-page');
+  if (!root) return;
+
+  const header = root.querySelector('[data-header]');
+  const navToggle = root.querySelector('[data-nav-toggle]');
+  const navLinks = root.querySelectorAll('.site-nav a, .header-cta');
+
+  const setScrolled = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+
+  setScrolled();
+  window.addEventListener('scroll', setScrolled, { passive: true });
+
+  navToggle?.addEventListener('click', () => {
+    const isOpen = root.classList.toggle('wncw-nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      root.classList.remove('wncw-nav-open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+</body></html>
