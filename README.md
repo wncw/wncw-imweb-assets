@@ -14,6 +14,7 @@ Static image assets and an Imweb code-block snippet for the WNCW homepage.
 - `assets/wncw-console-insights.png`
 - `imweb-code.html`
 - `preview-local.html`
+- `preview-imweb-simulated.html`
 - `build-imweb-snippet.mjs`
 
 ## Rebuild

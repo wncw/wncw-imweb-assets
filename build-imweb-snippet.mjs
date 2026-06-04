@@ -127,14 +127,15 @@ const imwebGuardCss = `
   display: block !important;
   position: relative;
   z-index: 0;
-  width: var(--wncw-page-width, 100%);
-  max-width: var(--wncw-page-width, 100%);
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
-  margin-left: var(--wncw-page-margin, 0);
-  margin-right: var(--wncw-page-margin, 0);
+  margin: 0;
   isolation: isolate;
+  direction: ltr;
   font-style: normal;
   text-align: left;
+  unicode-bidi: isolate;
 }
 
 #wncw-imweb-page,
@@ -200,20 +201,12 @@ const inlineScript = `
   const navToggle = root.querySelector('[data-nav-toggle]');
   const navLinks = root.querySelectorAll('.site-nav a, .header-cta');
 
-  const syncFrame = () => {
-    const width = document.documentElement.clientWidth || window.innerWidth;
-    root.style.setProperty('--wncw-page-width', width + 'px');
-    root.style.setProperty('--wncw-page-margin', 'calc(50% - ' + width / 2 + 'px)');
-  };
-
   const setScrolled = () => {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 12);
   };
 
-  syncFrame();
   setScrolled();
-  window.addEventListener('resize', syncFrame, { passive: true });
   window.addEventListener('scroll', setScrolled, { passive: true });
 
   navToggle?.addEventListener('click', () => {
@@ -243,5 +236,11 @@ await writeFile(join(here, "imweb-code.html"), renderSnippet(true), "utf8");
 await writeFile(
   join(here, "preview-local.html"),
   `<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>WNCW Imweb Preview</title>\n</head>\n<body style="margin:0">\n${renderSnippet(false)}\n</body>\n</html>\n`,
+  "utf8",
+);
+
+await writeFile(
+  join(here, "preview-imweb-simulated.html"),
+  `<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1" />\n<title>WNCW Imweb Simulation</title>\n<style>\nbody { margin: 0; direction: rtl; background: #f8f7f2; }\n.imweb-section { max-width: 1180px; margin: 0 auto; padding: 0 20px; direction: rtl; }\n</style>\n</head>\n<body>\n<div class="imweb-section">\n${renderSnippet(false)}\n</div>\n</body>\n</html>\n`,
   "utf8",
 );
