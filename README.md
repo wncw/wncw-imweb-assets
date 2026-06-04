@@ -4,7 +4,7 @@ Static image assets and an Imweb code-block snippet for the WNCW homepage.
 
 ## CDN base
 
-`https://cdn.jsdelivr.net/gh/wncw/wncw-imweb-assets@main/assets/`
+`https://cdn.jsdelivr.net/gh/wncw/wncw-imweb-assets@b0a9572/assets/`
 
 ## Files
 

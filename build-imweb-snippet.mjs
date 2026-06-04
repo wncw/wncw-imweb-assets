@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const projectRoot = dirname(here);
 const homepageDir = join(projectRoot, "wncw-homepage");
+const cdnAssetRef = "b0a9572";
 
 const html = await readFile(join(homepageDir, "index.html"), "utf8");
 const css = await readFile(join(homepageDir, "styles.css"), "utf8");
@@ -263,7 +264,7 @@ const inlineScript = `
 </script>`;
 
 const renderSnippet = (useCdn) => {
-  const srcBase = useCdn ? "https://cdn.jsdelivr.net/gh/wncw/wncw-imweb-assets@main/assets/" : "./assets/";
+  const srcBase = useCdn ? `https://cdn.jsdelivr.net/gh/wncw/wncw-imweb-assets@${cdnAssetRef}/assets/` : "./assets/";
   const renderedBody = body.replaceAll('src="./assets/', `src="${srcBase}`);
 
   return `<style>\n${scopedCss}\n${imwebGuardCss}\n</style>\n\n<div id="wncw-imweb-page" class="wncw-imweb-page">\n${renderedBody}\n</div>\n\n${inlineScript}\n`;
