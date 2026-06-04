@@ -126,26 +126,14 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
   display: inline-flex;
   min-width: max-content;
   align-items: center;
-  gap: 10px;
   font-weight: 760;
 }
 
-#wncw-imweb-page .brand-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 1px solid var(--ink);
-  border-radius: 6px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 16px;
-  letter-spacing: 0;
-}
-
-#wncw-imweb-page .brand-text {
-  font-size: 15px;
-  letter-spacing: 0;
+#wncw-imweb-page .brand-logo {
+  display: block;
+  width: 132px;
+  max-width: 46vw;
+  height: auto;
 }
 
 #wncw-imweb-page .site-nav {
@@ -800,6 +788,10 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
   color: var(--ink);
 }
 
+#wncw-imweb-page .footer-brand .brand-logo {
+  width: 126px;
+}
+
 #wncw-imweb-page .footer-links {
   display: flex;
   gap: 18px;
@@ -1194,8 +1186,7 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
 <div id="wncw-imweb-page" class="wncw-imweb-page">
 <header class="site-header" data-header>
       <a class="brand" href="#wncw-top" aria-label="WNCW 홈">
-        <span class="brand-mark">W</span>
-        <span class="brand-text">WNCW</span>
+        <img class="brand-logo" src="./assets/wncw-logo-horizontal.png" alt="WNCW" width="522" height="112" />
       </a>
 
       <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-nav-toggle>
@@ -1255,7 +1246,7 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
               <img
                 src="./assets/wncw-console-overview.png"
                 alt="WNCW AI DataOps Console 데이터 자산 통합관리 화면"
-                width="1425"
+                width="1440"
                 height="960"
                 loading="eager"
               />
@@ -1279,7 +1270,7 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
               <img
                 src="./assets/wncw-console-overview.png"
                 alt="데이터 자산 통합관리 화면"
-                width="1425"
+                width="1440"
                 height="960"
                 loading="lazy"
               />
@@ -1312,7 +1303,7 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
             <div class="product-media">
               <img
                 src="./assets/wncw-console-pipeline.png"
-                alt="AI 학습환경 구축 파이프라인 화면"
+                alt="데이터 처리 파이프라인 화면"
                 width="1440"
                 height="960"
                 loading="lazy"
@@ -1555,8 +1546,7 @@ body { margin: 0; direction: rtl; background: #f8f7f2; text-align: right; }
       <div class="container footer-layout">
         <div>
           <a class="brand footer-brand" href="#wncw-top" aria-label="WNCW 홈">
-            <span class="brand-mark">W</span>
-            <span class="brand-text">WNCW</span>
+            <img class="brand-logo" src="./assets/wncw-logo-horizontal.png" alt="WNCW" width="522" height="112" />
           </a>
           <p>AI DataOps Console</p>
         </div>
